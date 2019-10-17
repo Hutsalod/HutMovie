@@ -47,25 +47,30 @@ hitCheck();  | Pushing an object between objects
 public class MainActivity extends AppCompatActivity {
     private Timer timer = new Timer();
     private Handler handler = new Handler();
-    ImageView ImageView,ImageView2;
-    
+
+    ImageView Person1,Person2;
+
+    HutMovie hutMovie;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView = (ImageView)findViewById(R.id.TextView);
+        hutMovie = new HutMovie();
+
+        Person1 = (ImageView)findViewById(R.id.Person1);
+        Person2 = (ImageView)findViewById(R.id.Person2);
 
         timer.schedule(new TimerTask() {
-
                 @Override
                 public void run() {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            HutMovie.goRIGHT(ImageView,5);
-                            if(HutMovie.hitCheck(ImageView,ImageView2))
-                                Log.d("LOG","FINISH!");
-                                
+                            hutMovie.goRight(Person1,3);
+                            hutMovie.goRight(Person2,2);
+                            hutMovie.goDown(Person1,2);
+                            hutMovie.goDown(Person2,3);
                         }
                     });
                 }
