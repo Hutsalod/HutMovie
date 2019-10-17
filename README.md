@@ -1,4 +1,4 @@
-<p align="center"> ## HutMovie </p>
+#### HutMovie 
 
 ### Mobile games development library for android. Android Studio
 
