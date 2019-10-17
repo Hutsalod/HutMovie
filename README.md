@@ -1,9 +1,9 @@
-# HutMovie
+<p align="center"> # HutMovie </p>
 ### Mobile games development library for android. Android Studio
-
+:- ffff -:
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
 
-
+## Connection
 ```javascript
 	allprojects {
 		repositories {
@@ -20,17 +20,20 @@
 	}
 ```  
 
+## Description of library functions
+
 Methods  | Description
 ------------- | -------------
-Hide();  | Content Cell
-Show();  | Content Cell 
-goLEFT();  | Content Cell
-goRIGHT();  | Content Cell 
-goUP();  | Content Cell
-goDOWN();  | Content Cell 
+Show();  | Animation of appearance
+Hide();  | The attenuation animation
+goLEFT();  | Move the object to the left
+goRIGHT();  | Move the object to the right
+goUP();  | Move the object to the up
+goDOWN();  | Move the object to the down
+hitCheck();  | Pushing an object between objects
 
 
-## Example
+## Example code
 
   ```javascript
   
