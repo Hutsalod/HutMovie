@@ -24,7 +24,7 @@
   
   	dependencies {
 	        implementation 'com.github.Hutsalod:HutMovie:0.0.1'
-	}
+		}
 ```  
 
 ## Description of library functions
@@ -72,3 +72,10 @@ public class MainActivity extends AppCompatActivity {
             }, 0, 20);
     }
 ```  
+
+## Example Game
+![](https://github.com/Hutsalod/HutMovie/blob/master/skrin2png.png)  | ![](https://github.com/Hutsalod/HutMovie/blob/master/screen-1.jpg)
+------------- | -------------
+ 
+
+
