@@ -1,10 +1,13 @@
-#### HutMovie 
+## HutMovie 
 
 ### Mobile games development library for android. Android Studio
 
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
 
 ## Connection
+
+#### Project:app
+
 ```javascript
 	allprojects {
 		repositories {
@@ -14,6 +17,9 @@
 	}
   
 ```  
+
+#### Module:app
+
   ```javascript
   
   	dependencies {
