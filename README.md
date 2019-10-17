@@ -1,6 +1,7 @@
-<p align="center"> # HutMovie </p>
+<p align="center"> ## HutMovie </p>
+
 ### Mobile games development library for android. Android Studio
-:- ffff -:
+
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
 
 ## Connection
