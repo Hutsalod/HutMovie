@@ -1,2 +1,2 @@
-include ':app', ':hutsalod'
+include ':app', ':hutmovie'
 rootProject.name='Game'

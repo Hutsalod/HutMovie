@@ -4,10 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.hutsalod.hutsalod.Animat;
-
+import com.hutsalod.hutmovie.HutMovie;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,38 +16,35 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
     private Timer timer = new Timer();
     private Handler handler = new Handler();
-    ImageView ImageView,ImageView2;
+
+    ImageView Person1,Person2;
+
+    HutMovie hutMovie;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView = (ImageView)findViewById(R.id.TextView);
+        hutMovie = new HutMovie();
 
-        ImageView2 = (ImageView)findViewById(R.id.textView2);
-
-
-        Animat.Show(ImageView,150);
-        ImageView2.setX(ImageView.getX()+800);
+        Person1 = (ImageView)findViewById(R.id.Person1);
+        Person2 = (ImageView)findViewById(R.id.Person2);
 
         timer.schedule(new TimerTask() {
-
                 @Override
                 public void run() {
-
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            Animat.goRIGHT(ImageView,5);
-
-                            if(Animat.hitCheck(ImageView,ImageView2))
-                                Animat.Hide(ImageView,150);
+                            hutMovie.goRight(Person1,3);
+                            hutMovie.goRight(Person2,2);
+                            hutMovie.goDown(Person1,2);
+                            hutMovie.goDown(Person2,3);
                         }
                     });
                 }
             }, 0, 20);
-
-
-
-
     }
+
+
 }
