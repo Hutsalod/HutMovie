@@ -33,10 +33,16 @@ Methods  | Description
 ------------- | -------------
 Show();  | Animation of appearance
 Hide();  | The attenuation animation
+
+Methods   |  Description
+------------- | -------------
 goLeft();  | Move the object to the left
 goRight();  | Move the object to the right
 goUp();  | Move the object to the up
 goDown();  | Move the object to the down
+
+Methods   |  Description
+------------- | -------------
 hitCheck();  | Pushing an object between objects
 
 
