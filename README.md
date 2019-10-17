@@ -1,8 +1,10 @@
 # HutMovie
-Mobile games development library for android. Android Studio
+### Mobile games development library for android. Android Studio
 
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
 
+
+```javascript
 	allprojects {
 		repositories {
 			...
@@ -10,7 +12,7 @@ Mobile games development library for android. Android Studio
 		}
 	}
   
-  
+```  
   
   
   	dependencies {
