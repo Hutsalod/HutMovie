@@ -23,7 +23,7 @@
   ```javascript
   
   	dependencies {
-	        implementation 'com.github.Hutsalod:HutMovie:0.1'
+	        implementation 'com.github.Hutsalod:HutMovie:0.2'
 		}
 ```  
 
@@ -43,7 +43,8 @@ goDown();  | Move the object to the down
 
 Methods   |  Description
 ------------- | -------------
-hitCheck();  | Pushing an object between objects
+isCheck();  | Pushing an object between objects
+isRoom();  | The object is not in the room
 
 
 ## Example code
