@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="400" height="200" src="https://github.com/Hutsalod/HutMovie/blob/master/fon.png">
+</p>
+
 # HUTMOVIE 
 
 ### Mobile games development library for android. Android Studio
