@@ -2,6 +2,7 @@ package com.hutsalod.game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -31,20 +32,18 @@ public class MainActivity extends AppCompatActivity {
         Person2 = (ImageView)findViewById(R.id.Person2);
 
         timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            hutMovie.goRight(Person1,3);
-                            hutMovie.goRight(Person2,2);
-                            hutMovie.goDown(Person1,2);
-                            hutMovie.goDown(Person2,3);
-                        }
-                    });
-                }
-            }, 0, 20);
+            @Override
+            public void run() {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        hutMovie.goRight(Person1,3);
+                        hutMovie.goRight(Person2,2);
+                        hutMovie.goDown(Person1,2);
+                        hutMovie.goDown(Person2,3);
+                    }
+                });
+            }
+        }, 0, 20);
     }
-
-
 }
