@@ -73,20 +73,17 @@ public class MainActivity extends AppCompatActivity {
         Person2 = (ImageView)findViewById(R.id.Person2);
 
  
-	handler.post(new Runnable() {
-	@Override
-		public void run() {
-		hutMovie.goRight(Person1,3);
-		hutMovie.goRight(Person2,2);
-		hutMovie.goDown(Person1,2);
-		hutMovie.goDown(Person2,3);
+		handler.post(new Runnable() {
+		@Override
+			public void run() {
+			hutMovie.goRight(Person1,3);
+			hutMovie.goRight(Person2,2);
+			hutMovie.goDown(Person1,2);
+			hutMovie.goDown(Person2,3);
 			    
-		handler.postDelayed(this, 20);
-		}
-	});
-       
-	    
-	    
+                	handler.post(this);
+            	}
+        	},20);  
 	    
     }
 ```  
