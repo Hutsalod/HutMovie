@@ -6,7 +6,7 @@
 
 ### Mobile games development library for android. Android Studio
 
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
+![](https://img.shields.io/badge/Version-0.3-blue) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
 
 ## Connection
 
