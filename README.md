@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
     }
 ```  
 
+### Running app
+  <img width="150" height="250" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
+  
 ## Example Game
 ![](https://github.com/Hutsalod/HutMovie/blob/master/skrin2png.png)  | ![](https://github.com/Hutsalod/HutMovie/blob/master/screen-1.jpg)
 ------------- | -------------
