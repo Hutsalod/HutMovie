@@ -6,13 +6,14 @@
 
 ### Mobile games development library for android. Android Studio
 
-![](https://img.shields.io/badge/Version-0.3-blue) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
+![](https://img.shields.io/badge/Version-0.4-blue) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
 
 ## Connection
 
 #### Project:app
 
 ```javascript
+
 	allprojects {
 		repositories {
 			...
@@ -29,14 +30,15 @@
   	dependencies {
 	        implementation 'com.github.Hutsalod:HutMovie:0.3'
 		}
+		
 ```  
 
 ## Description of library functions
 
 Methods  | Description
 ------------- | -------------
-Show();  | Animation of appearance
-Hide();  | The attenuation animation
+show();  | Animation of appearance
+hide();  | The attenuation animation
 
 Methods   |  Description
 ------------- | -------------
@@ -56,36 +58,34 @@ isRoom();  | The object is not in the room
   ```javascript
   
 public class MainActivity extends AppCompatActivity {
-    private Timer timer = new Timer();
-    private Handler handler = new Handler();
 
-    ImageView Person1,Person2;
+    private Handler play = new Handler();
 
-    HutMovie hutMovie;
+    private ImageView Person1, Person2;
+
+    private HutMovie hutMovie = new HutMovie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        hutMovie = new HutMovie();
+        setContentView(R.layout.activity_main); 
 
         Person1 = (ImageView)findViewById(R.id.Person1);
         Person2 = (ImageView)findViewById(R.id.Person2);
 
-        timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            hutMovie.goRight(Person1,3);
-                            hutMovie.goRight(Person2,2);
-                            hutMovie.goDown(Person1,2);
-                            hutMovie.goDown(Person2,3);
-                        }
-                    });
-                }
-            }, 0, 20);
+ 
+		play.post(new Runnable() {
+		@Override
+			public void run() {
+			hutMovie.goRight(Person1, 3);
+			hutMovie.goRight(Person2, 2);
+			hutMovie.goDown(Person1, 2);
+			hutMovie.goDown(Person2, 3);
+			    
+                	play.post(this);
+            	}
+        	},20);  
+	    
     }
 ```  
 
