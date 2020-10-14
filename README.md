@@ -13,6 +13,7 @@
 #### Project:app
 
 ```javascript
+
 	allprojects {
 		repositories {
 			...
@@ -29,14 +30,15 @@
   	dependencies {
 	        implementation 'com.github.Hutsalod:HutMovie:0.3'
 		}
+		
 ```  
 
 ## Description of library functions
 
 Methods  | Description
 ------------- | -------------
-Show();  | Animation of appearance
-Hide();  | The attenuation animation
+show();  | Animation of appearance
+hide();  | The attenuation animation
 
 Methods   |  Description
 ------------- | -------------
@@ -61,13 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView Person1,Person2;
 
-    private HutMovie hutMovie;
+    private HutMovie hutMovie = new HutMovie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        hutMovie = new HutMovie();
+        setContentView(R.layout.activity_main); 
 
         Person1 = (ImageView)findViewById(R.id.Person1);
         Person2 = (ImageView)findViewById(R.id.Person2);
