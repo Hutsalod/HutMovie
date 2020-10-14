@@ -6,7 +6,7 @@
 
 ### Mobile games development library for android. Android Studio
 
-![](https://img.shields.io/badge/Version-0.3-blue) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
+![](https://img.shields.io/badge/Version-0.4-blue) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
 
 ## Connection
 
@@ -56,12 +56,12 @@ isRoom();  | The object is not in the room
   ```javascript
   
 public class MainActivity extends AppCompatActivity {
-    private Timer timer = new Timer();
+
     private Handler handler = new Handler();
 
-    ImageView Person1,Person2;
+    private ImageView Person1,Person2;
 
-    HutMovie hutMovie;
+    private HutMovie hutMovie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,20 +72,22 @@ public class MainActivity extends AppCompatActivity {
         Person1 = (ImageView)findViewById(R.id.Person1);
         Person2 = (ImageView)findViewById(R.id.Person2);
 
-        timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            hutMovie.goRight(Person1,3);
-                            hutMovie.goRight(Person2,2);
-                            hutMovie.goDown(Person1,2);
-                            hutMovie.goDown(Person2,3);
-                        }
-                    });
-                }
-            }, 0, 20);
+ 
+	handler.post(new Runnable() {
+	@Override
+		public void run() {
+		hutMovie.goRight(Person1,3);
+		hutMovie.goRight(Person2,2);
+		hutMovie.goDown(Person1,2);
+		hutMovie.goDown(Person2,3);
+			    
+		handler.postDelayed(this, 20);
+		}
+	});
+       
+	    
+	    
+	    
     }
 ```  
 
