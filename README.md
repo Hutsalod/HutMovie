@@ -6,7 +6,7 @@
 
 ### Mobile games development library for android. Android Studio
 
-![](https://img.shields.io/badge/Version-0.4-blue) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
+![](https://img.shields.io/badge/version-0.4-blue) ![](https://img.shields.io/badge/lib-developer-grean)
 
 ## Connection
 
@@ -28,7 +28,7 @@
   ```javascript
   
   	dependencies {
-	        implementation 'com.github.Hutsalod:HutMovie:0.3'
+	        implementation 'com.github.Hutsalod:HutMovie:0.4'
 		}
 		
 ```  
@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
 
-        Person1 = (ImageView)findViewById(R.id.Person1);
-        Person2 = (ImageView)findViewById(R.id.Person2);
+        Person1 = findViewById(R.id.Person1);
+        Person2 = findViewById(R.id.Person2);
 
  
 		play.post(new Runnable() {
