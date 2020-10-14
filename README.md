@@ -59,9 +59,9 @@ isRoom();  | The object is not in the room
   
 public class MainActivity extends AppCompatActivity {
 
-    private Handler handler = new Handler();
+    private Handler play = new Handler();
 
-    private ImageView Person1,Person2;
+    private ImageView Person1, Person2;
 
     private HutMovie hutMovie = new HutMovie();
 
@@ -74,15 +74,15 @@ public class MainActivity extends AppCompatActivity {
         Person2 = (ImageView)findViewById(R.id.Person2);
 
  
-		handler.post(new Runnable() {
+		play.post(new Runnable() {
 		@Override
 			public void run() {
-			hutMovie.goRight(Person1,3);
-			hutMovie.goRight(Person2,2);
-			hutMovie.goDown(Person1,2);
-			hutMovie.goDown(Person2,3);
+			hutMovie.goRight(Person1, 3);
+			hutMovie.goRight(Person2, 2);
+			hutMovie.goDown(Person1, 2);
+			hutMovie.goDown(Person2, 3);
 			    
-                	handler.post(this);
+                	play.post(this);
             	}
         	},20);  
 	    
