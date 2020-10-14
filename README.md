@@ -46,6 +46,8 @@ goLeft();  | Move the object to the left
 goRight();  | Move the object to the right
 goUp();  | Move the object to the up
 goDown();  | Move the object to the down
+move();  | Moved edges by X and Y
+position();  | Move the object to the X and Y
 
 Methods   |  Description
 ------------- | -------------
