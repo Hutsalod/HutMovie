@@ -94,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
         final ImageView person2 = findViewById(R.id.Person2);
 
         game.setGame(new HutMovie.play() {
-            @Override public void run() {
+            @Override 
+            public void run() {
                 game.goRight(person1,3);
                 game.goDown(person1,2);
                 game.move(person2,2, 3);
