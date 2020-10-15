@@ -86,7 +86,6 @@ isRoom();  | The object is not in the room
 public class MainActivity extends AppCompatActivity {
 
     private Handler play = new Handler();
-
     private HutMovie hutMovie = new HutMovie();
 
     @Override
@@ -103,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
         	hutMovie.goRight(Person1, 3);
         	hutMovie.goDown(Person1, 2);
         	hutMovie.move(Person2, 2, 3);
-			    
         	play.post(this);
         	}
         }, 20);
