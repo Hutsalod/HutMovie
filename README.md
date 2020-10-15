@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageView person1 = findViewById(R.id.Person1);
         final ImageView person2 = findViewById(R.id.Person2);
 
-        play.postDelayed(new Runnable() {
+        play.post(new Runnable() {
         @Override
         public void run() {
         	hutMovie.goRight(person1, 3); //Move the object to the right
@@ -104,8 +104,7 @@ public class MainActivity extends AppCompatActivity {
         	hutMovie.move(person2, 2, 3); //Moved edges by X and Y
 		
         	play.post(this);
-        }
-        }, 20);
+        }});
 	
     }
 ```  
