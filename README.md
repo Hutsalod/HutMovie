@@ -99,11 +99,12 @@ public class MainActivity extends AppCompatActivity {
         play.postDelayed(new Runnable() {
         @Override
         public void run() {
-        	hutMovie.goRight(Person1, 3);
-        	hutMovie.goDown(Person1, 2);
-        	hutMovie.move(Person2, 2, 3);
-        	play.post(this);
-        	}
+        		hutMovie.goRight(Person1, 3);
+        		hutMovie.goDown(Person1, 2);
+        		hutMovie.move(Person2, 2, 3);
+		
+        		play.post(this);
+        		}
         }, 20);
 	
     }
