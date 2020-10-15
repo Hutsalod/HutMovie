@@ -34,7 +34,7 @@
 ```  
 
 
-## Description of library functions
+# Description of library functions
 
 Methods  | Description
 ------------- | -------------
@@ -57,7 +57,7 @@ isRoom();  | The object is not in the room
 
 
 
-## Example code
+# Example code
 ### activity_main.xml
   ```javascript
 <?xml version="1.0" encoding="utf-8"?>
