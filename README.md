@@ -13,7 +13,7 @@
 #### Project:app
 
 ```javascript
-
+	
 	allprojects {
 		repositories {
 			...
@@ -22,18 +22,18 @@
 	}
   
 ```  
-
+	
 #### Module:app
 
   ```javascript
-  
+  	
   	dependencies {
 	        implementation 'com.github.Hutsalod:HutMovie:0.5'
 		}
 		
 ```  
 
-
+	
 # Description of library functions
 
 Methods  | Description
@@ -55,7 +55,7 @@ Methods   |  Description
 isCheck();  | Pushing an object between objects
 isRoom();  | The object is not in the room
 
-
+	
 
 # Example code
 ### activity_main.xml
@@ -95,21 +95,22 @@ public class MainActivity extends AppCompatActivity {
         final ImageView person1 = findViewById(R.id.Person1);
         final ImageView person2 = findViewById(R.id.Person2);
 
-        new HutMovie.play() {
+        game.setGame(new HutMovie.play() {
         @Override
         public void run() {
                 game.goRight(person1, 3); //Move the Person1 to the right
                 game.goDown(person1, 2); //Move the Person1 to the down
                 game.move(person2, 2, 3); //Move the Person2 edges by X and Y
-        }};
+        }});
 	
     }
+ 	
 ```  
 
 ### Running app
   <img width="150" height="250" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
   
-  
+  	
 ## Example Game
 ![](https://github.com/Hutsalod/HutMovie/blob/master/skrin2png.png)  | ![](https://github.com/Hutsalod/HutMovie/blob/master/screen-1.jpg)
 ------------- | -------------
