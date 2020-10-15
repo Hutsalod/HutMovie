@@ -98,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
         game.setGame(new HutMovie.play() {
         @Override
         public void run() {
-        	game.goRight(person1, 3); //Move the object to the right
-        	game.goDown(person1, 2); //Move the object to the down
-        	game.move(person2, 2, 3); //Moved edges by X and Y
-        	}
-	});
+                game.goRight(person1, 3); //Move the object to the right
+                game.goDown(person1, 2); //Move the object to the down
+                game.move(person2, 2, 3); //Moved edges by X and Y
+        }
+        });
 	
     }
 ```  
