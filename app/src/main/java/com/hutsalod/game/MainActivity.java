@@ -16,27 +16,24 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Handler play = new Handler();
-
-    private HutMovie hutMovie = new HutMovie();
+    private HutMovie game = new HutMovie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ImageView Person1 = findViewById(R.id.Person1);
-        final ImageView Person2 = findViewById(R.id.Person2);
+        final ImageView person1 = findViewById(R.id.Person1);
+        final ImageView person2 = findViewById(R.id.Person2);
 
-        play.postDelayed(new Runnable() {
+        game.setGame(new HutMovie.play() {
             @Override
             public void run() {
-                hutMovie.goRight(Person1,3);
-                hutMovie.goDown(Person1,2);
-                hutMovie.move(Person2,2, 3);
-
-                play.post(this);
+                game.goRight(person1,3);
+                game.goDown(person1,2);
+                game.move(person2,2, 3);
             }
-        }, 20);
+        });
+
     }
 }
