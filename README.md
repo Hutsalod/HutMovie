@@ -6,7 +6,7 @@
 
 ### Mobile games development library for android. Android Studio
 
-![](https://img.shields.io/badge/version-0.4-blue) ![](https://img.shields.io/badge/lib-developer-grean)
+![](https://img.shields.io/badge/version-0.5-blue) ![](https://img.shields.io/badge/lib-developer-grean)
 
 
 ## Connection
@@ -28,7 +28,7 @@
   ```javascript
   
   	dependencies {
-	        implementation 'com.github.Hutsalod:HutMovie:0.4'
+	        implementation 'com.github.Hutsalod:HutMovie:0.5'
 		}
 		
 ```  
@@ -85,8 +85,7 @@ isRoom();  | The object is not in the room
   
 public class MainActivity extends AppCompatActivity {
 
-    private Handler play = new Handler();
-    private HutMovie hutMovie = new HutMovie();
+    private HutMovie game = new HutMovie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,15 +95,14 @@ public class MainActivity extends AppCompatActivity {
         final ImageView person1 = findViewById(R.id.Person1);
         final ImageView person2 = findViewById(R.id.Person2);
 
-        play.post(new Runnable() {
+        game.setGame(new HutMovie.play() {
         @Override
         public void run() {
-        	hutMovie.goRight(person1, 3); //Move the object to the right
-        	hutMovie.goDown(person1, 2); //Move the object to the down
-        	hutMovie.move(person2, 2, 3); //Moved edges by X and Y
-		
-        	play.post(this);
-        }});
+        	game.goRight(person1, 3); //Move the object to the right
+        	game.goDown(person1, 2); //Move the object to the down
+        	game.move(person2, 2, 3); //Moved edges by X and Y
+        	}
+	});
 	
     }
 ```  
