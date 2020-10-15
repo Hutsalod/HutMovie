@@ -8,8 +8,8 @@
 
 ![](https://img.shields.io/badge/version-0.4-blue) ![](https://img.shields.io/badge/lib-developer-grean)
 
-## Connection
 
+## Connection
 #### Project:app
 
 ```javascript
@@ -33,6 +33,7 @@
 		
 ```  
 
+
 ## Description of library functions
 
 Methods  | Description
@@ -55,8 +56,9 @@ isCheck();  | Pushing an object between objects
 isRoom();  | The object is not in the room
 
 
+
 ## Example code
-#### activity_main.xml
+### activity_main.xml
   ```javascript
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -64,22 +66,21 @@ isRoom();  | The object is not in the room
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grass">
-
-    <ImageView
-        android:id="@+id/Person1"
+    
+    <ImageView android:id="@+id/Person1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/sprite" />
-
-    <ImageView
-        android:id="@+id/Person2"
+	
+    <ImageView android:id="@+id/Person2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/sprite2" />
-
+	
 </FrameLayout>
 ``` 
-#### MainActivity.java
+
+### MainActivity.java
   ```javascript
   
 public class MainActivity extends AppCompatActivity {
@@ -106,12 +107,12 @@ public class MainActivity extends AppCompatActivity {
         	play.post(this);
         }
         }, 20);  
-	    
     }
 ```  
 
-### Running app
+### Running app.
   <img width="150" height="250" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
+  
   
 ## Example Game
 ![](https://github.com/Hutsalod/HutMovie/blob/master/skrin2png.png)  | ![](https://github.com/Hutsalod/HutMovie/blob/master/screen-1.jpg)
