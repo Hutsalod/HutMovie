@@ -60,7 +60,6 @@ isRoom();  | The object is not in the room
 # Example code
 ### activity_main.xml
   ```javascript
-  	
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -79,12 +78,9 @@ isRoom();  | The object is not in the room
         app:srcCompat="@drawable/sprite2" />
 	
 </FrameLayout>
-	
 ``` 
-
 ### MainActivity.java
   ```javascript
-  	
 public class MainActivity extends AppCompatActivity {
 
     private HutMovie game = new HutMovie();
@@ -94,19 +90,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
 
-        final ImageView person1 = findViewById(R.id.Person1);
-        final ImageView person2 = findViewById(R.id.Person2);
-
         game.setGame(new HutMovie.play() {
         @Override
         public void run() {
-                game.goRight(person1, 3); //Move the Person1 to the right
-                game.goDown(person1, 2); //Move the Person1 to the down
-                game.move(person2, 2, 3); //Move the Person2 edges by X and Y
+                game.goRight(findViewById(R.id.Person1), 3); //Move the Person1 to the right
+                game.goDown(findViewById(R.id.Person1), 2); //Move the Person1 to the down
+                game.move(findViewById(R.id.Person2), 2, 3); //Move the Person2 edges by X and Y
         }});
-	
     }
- 	
+}
 ```  
 
 ### Running app
