@@ -105,12 +105,13 @@ public class MainActivity extends AppCompatActivity {
         	hutMovie.move(Person2, 2, 3);
 			    
         	play.post(this);
-        }
-        }, 20);  
+        	}
+        }, 20);
+	
     }
 ```  
 
-### Running app.
+### Running app
   <img width="150" height="250" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
   
   
