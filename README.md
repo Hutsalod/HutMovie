@@ -80,13 +80,12 @@ public class MainActivity extends AppCompatActivity {
 		@Override
 			public void run() {
 			hutMovie.goRight(Person1, 3);
-			hutMovie.goRight(Person2, 2);
 			hutMovie.goDown(Person1, 2);
-			hutMovie.goDown(Person2, 3);
+			hutMovie.move(Person2, 2, 3);
 			    
                 	play.post(this);
             	}
-        	},20);  
+        	}, 20);  
 	    
     }
 ```  
