@@ -60,6 +60,7 @@ isRoom();  | The object is not in the room
 # Example code
 ### activity_main.xml
   ```javascript
+  	
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -78,11 +79,12 @@ isRoom();  | The object is not in the room
         app:srcCompat="@drawable/sprite2" />
 	
 </FrameLayout>
+	
 ``` 
 
 ### MainActivity.java
   ```javascript
-  
+  	
 public class MainActivity extends AppCompatActivity {
 
     private HutMovie game = new HutMovie();
