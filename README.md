@@ -90,13 +90,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
 
-        new HutMovie.play() {
-        @Override public void run() {
-                game.goRight(findViewById(R.id.Person1), 3); //Move the Person1 to the right
-                game.goDown(findViewById(R.id.Person1), 2); //Move the Person1 to the down
-                game.move(findViewById(R.id.Person2), 2, 3); //Move the Person2 edges by X and Y
+        final ImageView person1 = findViewById(R.id.Person1);
+        final ImageView person2 = findViewById(R.id.Person2);
+
+        game.setGame(new HutMovie.play() {
+            @Override public void run() {
+                game.goRight(person1,3);
+                game.goDown(person1,2);
+                game.move(person2,2, 3);
             }
-        };
+        });
     }
 }
 ```  
