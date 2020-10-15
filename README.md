@@ -93,15 +93,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
 
-        final ImageView Person1 = findViewById(R.id.Person1);
-        final ImageView Person2 = findViewById(R.id.Person2);
+        final ImageView person1 = findViewById(R.id.Person1);
+        final ImageView person2 = findViewById(R.id.Person2);
 
         play.postDelayed(new Runnable() {
         @Override
         public void run() {
-        	hutMovie.goRight(Person1, 3);
-        	hutMovie.goDown(Person1, 2);
-        	hutMovie.move(Person2, 2, 3);
+        	hutMovie.goRight(person1, 3); //Move the object to the right
+        	hutMovie.goDown(person1, 2); //Move the object to the down
+        	hutMovie.move(person2, 2, 3); //Moved edges by X and Y
 		
         	play.post(this);
         }
