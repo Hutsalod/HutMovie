@@ -56,14 +56,35 @@ isRoom();  | The object is not in the room
 
 
 ## Example code
+#### activity_main.xml
+  ```javascript
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grass">
 
+    <ImageView
+        android:id="@+id/Person1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/sprite" />
+
+    <ImageView
+        android:id="@+id/Person2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/sprite2" />
+
+</FrameLayout>
+``` 
+#### MainActivity.java
   ```javascript
   
 public class MainActivity extends AppCompatActivity {
 
     private Handler play = new Handler();
-
-    private ImageView Person1, Person2;
 
     private HutMovie hutMovie = new HutMovie();
 
@@ -72,20 +93,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
 
-        Person1 = findViewById(R.id.Person1);
-        Person2 = findViewById(R.id.Person2);
+        final ImageView Person1 = findViewById(R.id.Person1);
+        final ImageView Person2 = findViewById(R.id.Person2);
 
- 
-		play.post(new Runnable() {
-		@Override
-			public void run() {
-			hutMovie.goRight(Person1, 3);
-			hutMovie.goDown(Person1, 2);
-			hutMovie.move(Person2, 2, 3);
+        play.postDelayed(new Runnable() {
+        @Override
+        public void run() {
+        	hutMovie.goRight(Person1, 3);
+        	hutMovie.goDown(Person1, 2);
+        	hutMovie.move(Person2, 2, 3);
 			    
-                	play.post(this);
-            	}
-        	}, 20);  
+        	play.post(this);
+        }
+        }, 20);  
 	    
     }
 ```  
