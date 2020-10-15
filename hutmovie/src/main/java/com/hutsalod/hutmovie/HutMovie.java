@@ -113,10 +113,8 @@ public class HutMovie {
     }
 
     public abstract static class play{
-
         final  Handler p = new Handler();
         public boolean stop = false;
-
         public  play(){ p.post(new Runnable() {
             @Override public void run() {
                 if (!stop)
