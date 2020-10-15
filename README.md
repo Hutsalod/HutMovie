@@ -47,7 +47,7 @@ goLeft();  | Move the object to the left
 goRight();  | Move the object to the right
 goUp();  | Move the object to the up
 goDown();  | Move the object to the down
-move();  | Moved edges by X and Y
+move();  | Move edges by X and Y
 position();  | Move the object to the X and Y
 
 Methods   |  Description
@@ -96,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
         game.setGame(new HutMovie.play() {
             @Override 
             public void run() {
-                game.goRight(person1,3);
-                game.goDown(person1,2);
-                game.move(person2,2, 3);
+                game.goRight(person1,3); //Move the Person1 to the left
+                game.goDown(person1,2); //Move the Person1 to the down
+                game.move(person2,2, 3); //Move Person2 edges by X and Y
             }
         });
     }
