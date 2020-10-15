@@ -95,12 +95,12 @@ public class MainActivity extends AppCompatActivity {
         final ImageView person1 = findViewById(R.id.Person1);
         final ImageView person2 = findViewById(R.id.Person2);
 
-        Game.setGame(new HutMovie.play() {
+        game.setGame(new HutMovie.play() {
         @Override
         public void run() {
-                Game.goRight(person1, 3); //Move the Person1 to the right
-                Game.goDown(person1, 2); //Move the Person1 to the down
-                Game.move(person2, 2, 3); //Move the Person2 edges by X and Y
+                game.goRight(person1, 3); //Move the Person1 to the right
+                game.goDown(person1, 2); //Move the Person1 to the down
+                game.move(person2, 2, 3); //Move the Person2 edges by X and Y
         }
         });
 	
