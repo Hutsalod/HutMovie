@@ -35,8 +35,8 @@ public class HutMovie {
     }
 
     public  void move(final View view,float x,float y) {
-        view.setX(x<0.0 ?  view.getX()-x :  view.getX()+x);
-        view.setY(y<0.0 ?  view.getX()-x :  view.getX()+x);
+        view.setX(x<0 ?  view.getX()-x :  view.getX()+x);
+        view.setY(y<0 ?  view.getY()-y :  view.getY()+y);
     }
 
     public  void goLeft(final View view, long x) {
