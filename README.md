@@ -6,7 +6,7 @@
 
 ### Mobile games development library for android. Android Studio
 
-![](https://img.shields.io/badge/version-0.5-blue) ![](https://img.shields.io/badge/lib-developer-grean)
+![](https://img.shields.io/badge/version-0.5-grean) ![](https://img.shields.io/badge/lib-developer-grean) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/RocketChat/Rocket.Chat/raw/master/LICENSE)
 
 
 ## Connection
