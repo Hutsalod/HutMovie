@@ -79,28 +79,8 @@ isRoom();  | The object is not in the room
 	
 </FrameLayout>
 ``` 
-### MainActivity.kt (Kotlin)
-  ```javascript
-class MainActivity : AppCompatActivity() {
-    private val game = HutMovie()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val person1 = findViewById<ImageView>(R.id.Person1)
-        val person2 = findViewById<ImageView>(R.id.Person2)
-
-        game.setGame(object : play() {
-            override fun run() {
-                game.goRight(person1, 3) //Move the Person1 to the Right
-                game.goDown(person1, 2) //Move the Person1 to the Down
-                game.move(person2, 2f, 3f) //Move Person2 edges by X and Y
-            }
-        })
-    }
-}
-``` 
-### MainActivity.java (Java)
+### MainActivity.java
   ```javascript
 public class MainActivity extends AppCompatActivity {
 
