@@ -84,7 +84,7 @@ isRoom();  | The object is not in the room
   ```javascript
 public class MainActivity extends AppCompatActivity {
 
-    private HutMovie game = new HutMovie();
+    private HutMovie hutMovie = new HutMovie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
         new HutMovie.onStart() {
             @Override 
             public void onRun() {
-                game.goRight(person1, 3); //Move the Person1 to the Right
-                game.goDown(person1, 2); //Move the Person1 to the Down
-                game.move(person2, 2, 3); //Move Person2 edges by X and Y
+                hutMovie.goRight(person1, 3); //Move the Person1 to the Right
+                hutMovie.goDown(person1, 2); //Move the Person1 to the Down
+                hutMovie.move(person2, 2, 3); //Move Person2 edges by X and Y
             }
         });
     }
