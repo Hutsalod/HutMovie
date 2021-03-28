@@ -7,7 +7,7 @@ import static android.view.View.VISIBLE;
 
 public class GoHut {
 
-    public static void Hide(final View view, long duration) {
+    public static void Hide(final View view, int duration) {
         view.animate().scaleX(0).scaleY(0).setDuration(duration).withEndAction(new Runnable() {
             @Override
             public void run() {
@@ -15,7 +15,7 @@ public class GoHut {
             }
         });
     }
-    public static void Show(final View view,long duration) {
+    public static void Show(final View view, int duration) {
         view.animate().scaleX(1).scaleY(1).setDuration(duration).withStartAction(new Runnable() {
             @Override
             public void run() {
@@ -24,23 +24,23 @@ public class GoHut {
         });
     }
 
-    public static void goLEFT(final View view, long x) {
+    public static void goLEFT(final View view, int x) {
         view.setX(view.getX()-x);
     }
 
-    public static void goRIGHT(final View view,long x) {
+    public static void goRIGHT(final View view, int x) {
         view.setX(view.getX()+x);
     }
 
-    public static void goUP(final View view,long y) {
+    public static void goUP(final View view, int y) {
         view.setY(view.getY()+y);
     }
 
-    public static void goDOWN(final View view,long y) {
+    public static void goDOWN(final View view, int y) {
         view.setY(view.getY()-y);
     }
 
-    public static void goJUMP(final View view,long y,long height) {
+    public static void goJUMP(final View view, int y, int height) {
         view.setY(view.getY()+y);
         view.setY(view.getY()-y);
     }
