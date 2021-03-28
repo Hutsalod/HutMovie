@@ -94,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
         final ImageView person1 = findViewById(R.id.Person1);
         final ImageView person2 = findViewById(R.id.Person2);
 
-        game.setGame(new HutMovie.play() {
+        new HutMovie.onStart() {
             @Override 
-            public void run() {
+            public void onRun() {
                 game.goRight(person1, 3); //Move the Person1 to the Right
                 game.goDown(person1, 2); //Move the Person1 to the Down
                 game.move(person2, 2, 3); //Move Person2 edges by X and Y
