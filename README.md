@@ -133,4 +133,6 @@ echo "sdk.dir="$ANDROID_HOME > local.properties
 ## Bug report & Feature request
 
 Please report via [GitHub issue](https://github.com/Hutsalod/HutMovie/issues) :)
-
+<p align="center">
+  <img width="250" height="150" src="https://raw.githubusercontent.com/Hutsalod/HutMovie/master/end.gif">
+</p>
