@@ -9,7 +9,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/RocketChat/Rocket.Chat/raw/master/LICENSE) ![](https://img.shields.io/badge/version-0.6-blue) ![](https://img.shields.io/badge/lib-developer-grean) 
 
 
-## Connection
+## 🛠 Connection
 #### Project:app
 
 ```javascript
@@ -34,7 +34,7 @@
 ```  
 
 	
-# Description of library functions
+## 📃 Description of library functions
 
 Methods  | Description
 ------------- | -------------
@@ -57,7 +57,7 @@ isRoom();  | The object is not in the room
 
 	
 
-# Example code
+## 🎲 Example code
 ### activity_main.xml
   ```javascript
 <?xml version="1.0" encoding="utf-8"?>
@@ -110,12 +110,12 @@ public class MainActivity extends AppCompatActivity {
   <img width="150" height="250" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
   
   	
-## Example Game
+## 👏 Example Game
 ![](https://github.com/Hutsalod/HutMovie/blob/master/skrin2png.png)  | ![](https://github.com/Hutsalod/HutMovie/blob/master/screen-1.jpg)
 ------------- | -------------
  
 
-## How to build
+## ✍️ How to build
 
 Retrolambda needs java8 to be installed on your system
 ```
@@ -130,7 +130,7 @@ echo "sdk.dir="$ANDROID_HOME > local.properties
 ```
 
 
-## Bug report & Feature request
+## 📃 Bug report & Feature request
 
 Please report via [GitHub issue](https://github.com/Hutsalod/HutMovie/issues) :)
 <p align="center">
