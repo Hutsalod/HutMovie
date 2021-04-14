@@ -58,7 +58,7 @@ isRoom();  | The object is not in the room
 	
 
 ## 🎲 Example code
-### activity_main.xml
+#### activity_main.xml
   ```javascript
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -80,7 +80,7 @@ isRoom();  | The object is not in the room
 </FrameLayout>
 ``` 
 
-### MainActivity.java
+#### MainActivity.java
   ```javascript
 public class MainActivity extends AppCompatActivity {
 
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```  
 
-### Running app
+#### Running app
   <img width="150" height="250" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
   
   	
