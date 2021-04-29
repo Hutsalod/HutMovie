@@ -2,14 +2,18 @@
   <img width="400" height="172" src="https://github.com/Hutsalod/HutMovie/blob/master/fon.png">
 </p>
 
-# HUTMOVIE 
+⠀
+
+# HUTMOVIE ✌️
 
 ### Mobile games development library for android. Android Studio
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/RocketChat/Rocket.Chat/raw/master/LICENSE) ![](https://img.shields.io/badge/version-0.6-blue) ![](https://img.shields.io/badge/lib-developer-grean) 
 
 
-## 🛠 Connection
+⠀
+⠀
+## 🛠 CONNECTION
 #### Project:app
 
 ```javascript
@@ -32,9 +36,10 @@
 		}
 		
 ```  
-
+⠀
+⠀
 	
-## 📃 Description of library functions
+## 📃 DESCRIPTION OF LIBRARY FUNCTIONS
 
 Methods  | Description
 ------------- | -------------
@@ -56,8 +61,8 @@ isCheck();  | Pushing an object between objects
 isRoom();  | The object is not in the room
 
 	
-
-## 🎲 Example code
+⠀
+## 🎲 EXAMPLE CODE
 #### activity_main.xml
   ```javascript
 <?xml version="1.0" encoding="utf-8"?>
@@ -109,8 +114,9 @@ public class MainActivity extends AppCompatActivity {
 #### Running app
   <img width="150" height="250" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
   
+⠀
   	
-## 👏 Example Game
+## 👏 EXAMPLE GAME
 ![](https://github.com/Hutsalod/HutMovie/blob/master/skrin2png.png)  | ![](https://github.com/Hutsalod/HutMovie/blob/master/screen-1.jpg)
 ------------- | -------------
  
