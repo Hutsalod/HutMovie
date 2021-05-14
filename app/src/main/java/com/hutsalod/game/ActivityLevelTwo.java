@@ -26,17 +26,12 @@ public class ActivityLevelTwo extends AppCompatActivity {
             @Override
             public void onRun() {
                 game.goLeft(person1,2);
-                if (game.isCheck(person1, enemy))
+                if (game.isCheck(enemy))
                     Toast.makeText(getApplicationContext(), "GAME OVER!!", Toast.LENGTH_SHORT).show();
             }
         };
 
-        findViewById(R.id.Jump).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                game.goJump(findViewById(R.id.Person1),10);
-            }
-        });
+
 
     }
 }

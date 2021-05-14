@@ -1,13 +1,13 @@
 package com.hutsalod.hutmovie;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Handler;
-import android.os.SystemClock;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
@@ -21,8 +21,7 @@ import static android.view.View.VISIBLE;
 public class HutMovie {
 
     private Context context;
-    public View view = null;
-    private onStart time;
+    private View view = null;
 
     public HutMovie(){
     }
@@ -33,20 +32,7 @@ public class HutMovie {
 
     public HutMovie(final View view){
         this.view = view;
-    }
-
-    public  HutMovie setContext(final Context context){
-        this.context = context;
-        return this;
-    }
-
-    public  HutMovie isStart(final Boolean bool){
-        if (!bool) time.stopPlay();
-        return this;
-    }
-
-    public  void setGame(onStart listener){
-        time = listener;
+        this.view.animate().setDuration(1000);
     }
 
 
@@ -73,11 +59,6 @@ public class HutMovie {
                 public void run() {
                 view.setVisibility(VISIBLE);
             }});
-    }
-
-    public  void position(final View view,float x,float y) {
-            view.setX(x);
-            view.setY(y);
     }
 
     public  void position(float x,float y) {
@@ -107,51 +88,34 @@ public class HutMovie {
     }
 
 
-    public void goJump(final View view, final int jump){
 
-        final float[] getY = {view.getY()};
-        final byte[] maxJump = {0};
-
-        Handler p = new Handler();
-        p.post(new Runnable() {
-            @Override public void run() {
-                if (maxJump[0] == 1) {
-                    getY[0] = getY[0] - 1;
-                    if (view.getY() <= (getY[0] - jump))
-                        maxJump[0] = 2;
-                }
-                if (maxJump[0] == 2) {
-                    view.setY(view.getY() + 1);
-                    if (view.getY() >= getY[0])
-                        maxJump[0] = 0;
-                }
-                view.setY(view.getY());
-            }});
+    public  HutMovie move(float x,float y) {
+        view.animate().x(x).y(y);
+        return this;
     }
 
-    public  void move(float x,float y) {
-        if (view != null) {
-            view.setX(x < 0 ? view.getX() - x : view.getX() + x);
-            view.setY(y < 0 ? view.getY() - y : view.getY() + y);
-        }
+    public  HutMovie left(int x) {
+        view.animate().x(x);
+        return this;
     }
 
-    public  void goLeft(int x) {
-        if (view != null)
-            view.setX(view.getX()-x);
+    public  HutMovie right(int x) {
+        view.animate().x(x);
+        return this;
     }
 
-    public  void goRight(int x) {
-        if (view != null)
-            view.setX(view.getX()+x);
+    public  HutMovie down(int y) {
+        return this;
     }
 
-    public  boolean isCheck(final View view, final View view2) {
-        return setCheck(view, view2, 0);
+    public  HutMovie rotation(int rotation) {
+        view.animate().rotation(rotation);
+        return this;
     }
 
-    public  boolean isCheck(final View view, final View view2, int size) {
-        return setCheck(view, view2, size);
+
+    public  boolean isCheck(final View view) {
+        return setCheck(this.view, view, 0);
     }
 
     private boolean setCheck(final View view, final View view2, int size) {
@@ -165,16 +129,26 @@ public class HutMovie {
     }
 
 
-    public  boolean isRoom(final View view) {
+    public  boolean isRoom() {
         WindowManager wm = (WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
         Point size = new Point();
         disp.getSize(size);
-        if (view.getX() == 0 || (view.getY() == 0 ) || view.getX() == size.x || view.getY() == +size.y) {
+        if (this.view.getX() == 0 || (this.view.getY() == 0 ) || this.view.getX() == size.x || this.view.getY() == +size.y) {
             return true;
         }
         return false;
+    }
+
+    public HutMovie spead(int duration) {
+        view.animate().setDuration(duration);
+        return this;
+    }
+
+    public HutMovie onRun() {
+        view.animate().start();
+        return HutMovie.this;
     }
 
 
@@ -183,12 +157,13 @@ public class HutMovie {
      * @return whether back is handled or not.
      */
 
+
+
     public abstract static class onStart {
 
         private final  Handler p = new Handler();
         private boolean play = true;
         public abstract void onRun();
-
         public void stopPlay(){
             play = false;
         }
@@ -198,12 +173,15 @@ public class HutMovie {
 
         public  onStart(){ p.post(new Runnable() {
             @Override public void run() {
-                if (play) onStart.this.onRun();
+                if (play) {
+                    onStart.this.onRun();
+                }
                 p.post(this);
             }});
         }
-
     }
+
+
 }
 
 
