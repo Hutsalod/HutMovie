@@ -11,7 +11,7 @@
 
 ### Mobile games development library for android. Android Studio
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/RocketChat/Rocket.Chat/raw/master/LICENSE) ![](https://img.shields.io/badge/version-0.6-blue) ![](https://img.shields.io/badge/lib-developer-grean) 
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/RocketChat/Rocket.Chat/raw/master/LICENSE) ![](https://img.shields.io/badge/version-0.7-blue) ![](https://img.shields.io/badge/lib-developer-grean) 
 
 
 ⠀
@@ -35,7 +35,7 @@
   ```javascript
   	
   	dependencies {
-	        implementation 'com.github.Hutsalod:HutMovie:0.6'
+	        implementation 'com.github.Hutsalod:HutMovie:0.7'
 		}
 		
 ```  
@@ -51,17 +51,21 @@ hide();  | The attenuation animation
 
 Methods   |  Description
 ------------- | -------------
-goLeft();  | Move the object to the left
-goRight();  | Move the object to the right
-goUp();  | Move the object to the up
-goDown();  | Move the object to the down
+left();  | Move the object to the left
+right();  | Move the object to the right
+up();  | Move the object to the up
+dowm();  | Move the object to the down
 move();  | Move edges by X and Y
 position();  | Move the object to the X and Y
+rotation();  | objecct rotation
+jump();  | High jump
+follow();  | Movement to the object
 
 Methods   |  Description
 ------------- | -------------
 isCheck();  | Pushing an object between objects
 isRoom();  | The object is not in the room
+repeat();  | Repeat the animation
 
 	
 ⠀
@@ -92,25 +96,23 @@ isRoom();  | The object is not in the room
   ```javascript
 public class MainActivity extends AppCompatActivity {
 
-    private HutMovie hutMovie = new HutMovie();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
 
-        final ImageView person1 = findViewById(R.id.Person1);
-        final ImageView person2 = findViewById(R.id.Person2);
+        new HutMovie(findViewById(R.id.Person1))
+                .right(200)
+                .spead(1000)
+                .onRun();
 
-        new HutMovie.onStart() {
-            @Override 
-            public void onRun() {
-                hutMovie.goRight(person1, 3); //Move the Person1 to the Right
-                hutMovie.goDown(person1, 2); //Move the Person1 to the Down
-                hutMovie.move(person2, 2, 3); //Move Person2 edges by X and Y
-            }
-        });
+        new HutMovie(findViewById(R.id.Person2))
+                .down(300)
+                .move(300,400)
+                .onRun();
+		
     }
+    
 }
 ```  
 
