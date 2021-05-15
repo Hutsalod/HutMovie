@@ -103,12 +103,13 @@ public class MainActivity extends AppCompatActivity {
 
         new HutMovie(findViewById(R.id.Person1))
                 .right(200)
-                .spead(1000)
+                .repeat(true)
                 .onRun();
 
         new HutMovie(findViewById(R.id.Person2))
-                .down(300)
-                .move(300,400)
+                .down(200)
+                .move(200,300)
+                .repeat(true)
                 .onRun();
 		
     }
