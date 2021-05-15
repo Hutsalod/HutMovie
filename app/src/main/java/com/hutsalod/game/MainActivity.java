@@ -20,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
                 .onRun();
 
         new HutMovie(findViewById(R.id.Person2))
-                .down(300)
-                .move(300,400)
+                .down(200)
+                .move(200,300)
+                .repeat(true)
                 .onRun();
 
     }

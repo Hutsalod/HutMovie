@@ -87,11 +87,11 @@ public class HutMovie {
     }
 
     public  HutMovie move(final float x, final float y) {
-        view.animate().x(x).y(y+view.getX()).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+        view.animate().x(x+view.getX()).y(y+view.getY()).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
                 if (repeat)
-                view.animate().x(x).y(y+view.getX()).setInterpolator(new LinearInterpolator()).setListener(this);
+                view.animate().x(x+view.getX()).y(y+view.getY()).setInterpolator(new LinearInterpolator()).setListener(this);
             }
         });
         return this;
@@ -143,11 +143,11 @@ public class HutMovie {
     }
 
     public  HutMovie down(final int y) {
-        view.animate().y(y+view.getX()).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+        view.animate().y(view.getY()+y).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
                 if (repeat)
-                view.animate().y(y+view.getX()).setInterpolator(new LinearInterpolator()).setListener(this);
+                view.animate().y(view.getY()+y).setInterpolator(new LinearInterpolator()).setListener(this);
             }
         });
         return this;
