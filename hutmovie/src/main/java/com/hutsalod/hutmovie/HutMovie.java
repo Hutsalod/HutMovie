@@ -1,12 +1,15 @@
 package com.hutsalod.hutmovie;
 
-import android.animation.ValueAnimator;
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Handler;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.LinearInterpolator;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -22,19 +25,15 @@ public class HutMovie {
 
     private Context context;
     private View view = null;
+    private Boolean repeat = false;
 
     public HutMovie(){
-    }
-
-    public HutMovie(final Context context){
-        this.context = context;
     }
 
     public HutMovie(final View view){
         this.view = view;
         this.view.animate().setDuration(1000);
     }
-
 
     /**
      * onBackPressed
@@ -87,32 +86,108 @@ public class HutMovie {
         view.setY(view.getY()+y);
     }
 
-
-
-    public  HutMovie move(float x,float y) {
-        view.animate().x(x).y(y);
+    public  HutMovie move(final float x, final float y) {
+        view.animate().x(x).y(y+view.getX()).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if (repeat)
+                view.animate().x(x).y(y+view.getX()).setInterpolator(new LinearInterpolator()).setListener(this);
+            }
+        });
         return this;
     }
 
-    public  HutMovie left(int x) {
-        view.animate().x(x);
+    public  HutMovie x(int x) {
+        view.setX(x);
         return this;
     }
 
-    public  HutMovie right(int x) {
-        view.animate().x(x);
+    public  HutMovie y(int y) {
+        view.setY(y);
         return this;
     }
 
-    public  HutMovie down(int y) {
+    public  HutMovie left(final int x) {
+        view.animate().x(0-x)
+                .setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if (repeat)
+                view.animate().x(0-x).setInterpolator(new LinearInterpolator()).setListener(this);
+            }
+        });
         return this;
     }
 
-    public  HutMovie rotation(int rotation) {
-        view.animate().rotation(rotation);
+    public  HutMovie right(final int x) {
+        view.animate().x(view.getX()+x).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if (repeat)
+                view.animate().x(view.getX()+x).setInterpolator(new LinearInterpolator()).setListener(this);
+            }
+        });
         return this;
     }
 
+
+    public  HutMovie up(final int y) {
+        view.animate().y(0-y).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if (repeat)
+                view.animate().y(0-y).setInterpolator(new LinearInterpolator()).setListener(this);
+            }
+        });
+        return this;
+    }
+
+    public  HutMovie down(final int y) {
+        view.animate().y(y+view.getX()).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if (repeat)
+                view.animate().y(y+view.getX()).setInterpolator(new LinearInterpolator()).setListener(this);
+            }
+        });
+        return this;
+    }
+
+    public  HutMovie rotation(final int rotation) {
+        view.animate().rotation(rotation).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if (repeat)
+                    view.animate().rotation(rotation).setInterpolator(new LinearInterpolator()).setListener(this);
+            }
+        });
+        return this;
+    }
+
+    public  HutMovie repeat(boolean repeat) {
+        this.repeat = repeat;
+        return this;
+    }
+
+    public  HutMovie jump(final int jump) {
+        view.animate().y(0-jump).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                view.animate().y(jump);
+            }
+        });
+        return this;
+    }
+
+    public  HutMovie follow(final View v) {
+        view.animate().x(v.getX()).y(v.getY()).setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                view.animate().x(v.getX()).y(v.getY()).setInterpolator(new LinearInterpolator()).setListener(this);
+            }
+        });
+        return this;
+    }
 
     public  boolean isCheck(final View view) {
         return setCheck(this.view, view, 0);
@@ -128,7 +203,6 @@ public class HutMovie {
         return false;
     }
 
-
     public  boolean isRoom() {
         WindowManager wm = (WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE);
@@ -141,8 +215,8 @@ public class HutMovie {
         return false;
     }
 
-    public HutMovie spead(int duration) {
-        view.animate().setDuration(duration);
+    public HutMovie spead(int spead) {
+        view.animate().setDuration(spead);
         return this;
     }
 

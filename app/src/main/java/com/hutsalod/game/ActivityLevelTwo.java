@@ -11,7 +11,6 @@ import com.hutsalod.hutmovie.HutMovie;
 
 public class ActivityLevelTwo extends AppCompatActivity {
 
-    private HutMovie game = new HutMovie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,19 +18,22 @@ public class ActivityLevelTwo extends AppCompatActivity {
         setContentView(R.layout.activity_level_two);
 
 
-        final ImageView person1 = findViewById(R.id.Person1);
-        final ImageView enemy = findViewById(R.id.Enemy);
+        final HutMovie person1 = new HutMovie(findViewById(R.id.Person1));
+        final HutMovie enemy = new HutMovie(findViewById(R.id.Enemy));
 
-        new HutMovie.onStart() {
+        enemy.x(1000).left(100).repeat(true).spead(3000).onRun();
+
+
+
+        findViewById(R.id.Jump).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onRun() {
-                game.goLeft(person1,2);
-                if (game.isCheck(enemy))
+            public void onClick(View v) {
+                person1.jump(30);
+                if (person1.isCheck(findViewById(R.id.Enemy)))
                     Toast.makeText(getApplicationContext(), "GAME OVER!!", Toast.LENGTH_SHORT).show();
+
             }
-        };
-
-
+        });
 
     }
 }

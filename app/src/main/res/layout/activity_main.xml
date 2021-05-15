@@ -8,6 +8,7 @@
     <ImageView android:id="@+id/Person1"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
         app:srcCompat="@drawable/sprite" />
 
     <ImageView android:id="@+id/Person2"

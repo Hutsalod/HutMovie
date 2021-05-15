@@ -7,13 +7,13 @@
     android:background="#FBFFFF">
 
     <ImageView
-        android:id="@+id/Person1"
+        android:id="@+id/Enemy"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="center_vertical|right"
         app:srcCompat="@drawable/sprite2" />
 
-    <ImageView android:id="@+id/Enemy"
+    <ImageView android:id="@+id/Person1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="36dp"

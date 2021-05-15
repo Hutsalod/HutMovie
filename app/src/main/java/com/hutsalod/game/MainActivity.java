@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         new HutMovie(findViewById(R.id.Person1))
-                .right(500)
-                .spead(2000)
+                .right(200)
+                .repeat(true)
                 .onRun();
 
         new HutMovie(findViewById(R.id.Person2))
