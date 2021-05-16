@@ -7,7 +7,7 @@
 
 ⠀
 
-# HUTMOVIE ✌️
+# HUTMOVIE ✌️🚀
 
 ### Mobile games development library for android. Android Studio
 
