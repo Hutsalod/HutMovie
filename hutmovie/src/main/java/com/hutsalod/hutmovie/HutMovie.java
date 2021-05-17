@@ -3,8 +3,6 @@ package com.hutsalod.hutmovie;
 
 import android.os.Handler;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.List;
 
 //
 //  HutMovie
@@ -18,14 +16,11 @@ public class HutMovie {
     private View view = null, viewTwo = null;
     private Boolean repeat = false;
 
-    ArrayList<HutMovie> arrayList = new ArrayList<HutMovie>();
+
 
     private float speed = 1;
 
-    private int up, down, left, right, rotation, jump, jumpY, moveX, moveY, scaleShow, scaleHide;
-
-    public HutMovie(){
-    }
+    public int up, down, left, right, rotation, jump, jumpY, moveX, moveY, scaleShow, scaleHide;
 
     public HutMovie(final View view){
         this.view = view;
@@ -75,6 +70,7 @@ public class HutMovie {
 
     public  HutMovie right(final int x) {
         this.right = (int) (view.getX()+x);
+
         return this;
     }
 
@@ -140,11 +136,12 @@ public class HutMovie {
         }
     }
 
-    private  void toLeft() {
+    private HutMovie toLeft() {
         if (left <= view.getX() || repeat == true)
             this.view.setX(view.getX()-speed);
         if (left >= view.getX() && repeat == false)
             this.left = 0;
+        return null;
     }
 
     private  void toRight() {
@@ -154,11 +151,12 @@ public class HutMovie {
             this.right = 0;
     }
 
-    private  void toUp() {
+    private HutMovie toUp() {
         if (up <= view.getY() || repeat == true)
             this.view.setY(view.getY()-speed);
         if (up >= view.getY() && repeat == false)
             this.up = 0;
+        return null;
     }
 
     private  void toDown() {
@@ -209,11 +207,15 @@ public class HutMovie {
             jump = 0;
     }
 
+    private int isStop() {
+        return right | left | down | up | rotation | jump | scaleShow | scaleHide | moveX | moveY | scaleShow | scaleHide;
+    }
+
     public HutMovie onRun() {
         final  Handler handler = new Handler();
         handler.post(new Runnable() {
             @Override public void run() {
-
+                
                 if(right != 0)
                 toRight();
                 if(left != 0)
@@ -235,25 +237,14 @@ public class HutMovie {
                 if(viewTwo != null)
                 toFollow();
 
-                getAll();
-
                 handler.post(this);
 
-                int isStop = right | left | down |
-                        up | rotation | jump | scaleShow | scaleHide | moveX | moveY | scaleShow | scaleHide;
-
-                if (isStop == 0)
+                if (isStop() == 0)
                 handler.removeCallbacks(this);
 
             }});
         return HutMovie.this;
     }
-
-    public List<HutMovie> getAll() {
-        return new ArrayList<HutMovie>(arrayList);
-    }
-
-
 }
 
 
