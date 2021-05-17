@@ -100,17 +100,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
+	
+	    HutMovie person1 = new HutMovie(findViewById(R.id.Person1));
+        HutMovie person2 = new HutMovie(findViewById(R.id.Person2));
 
-        new HutMovie(findViewById(R.id.Person1))
-                .right(200)
-                .repeat(true)
-                .onRun();
+        person1.right(200)
+               .repeat(true)
+               .onRun();
 
-        new HutMovie(findViewById(R.id.Person2))
-                .down(200)
-                .move(200,300)
-                .repeat(true)
-                .onRun();
+        person2.down(200)
+               .move(200,300)
+               .repeat(true)
+               .onRun();
 		
     }
     
