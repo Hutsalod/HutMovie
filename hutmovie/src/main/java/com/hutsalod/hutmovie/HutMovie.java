@@ -29,7 +29,6 @@ public class HutMovie {
 
     public HutMovie(final View view){
         this.view = view;
-        arrayList.add(up(333));
     }
 
     /**
@@ -129,7 +128,7 @@ public class HutMovie {
         return false;
     }
 
-    public  void toMove() {
+    private  void toMove() {
         if (moveX >= view.getX() || repeat == true)
             this.view.setX(moveX <= 0 ?  view.getX()-speed :  view.getX()+speed);
         if (moveY >= view.getY() || repeat == true)
@@ -141,42 +140,42 @@ public class HutMovie {
         }
     }
 
-    public  void toLeft() {
+    private  void toLeft() {
         if (left <= view.getX() || repeat == true)
             this.view.setX(view.getX()-speed);
         if (left >= view.getX() && repeat == false)
             this.left = 0;
     }
 
-    public  void toRight() {
+    private  void toRight() {
         if (right >= view.getX() || repeat == true)
             this.view.setX(view.getX()+speed);
         if (right <= view.getX() && repeat == false)
             this.right = 0;
     }
 
-    public  void toUp() {
+    private  void toUp() {
         if (up <= view.getY() || repeat == true)
             this.view.setY(view.getY()-speed);
         if (up >= view.getY() && repeat == false)
             this.up = 0;
     }
 
-    public  void toDown() {
+    private  void toDown() {
         if (down >= view.getY() || repeat == true)
             this.view.setY(view.getY()+speed);
         if (down <= view.getY() && repeat == false)
             this.down = 0;
     }
 
-    public  void toRotation() {
+    private  void toRotation() {
         if (rotation >= view.getRotation() || repeat == true)
             this.view.setRotation(view.getRotation()+speed);
         if (rotation <= view.getRotation() && repeat == false)
             this.rotation = 0;
     }
 
-    public  void toScaleShow() {
+    private  void toScaleShow() {
         if (1 >= view.getScaleX()) {
             this.view.setScaleX((float) (view.getScaleX() + 0.001 * scaleShow));
             this.view.setScaleY((float) (view.getScaleY() + 0.001 * scaleShow));
@@ -185,7 +184,7 @@ public class HutMovie {
             this.scaleHide = 0;
     }
 
-    public  void toScaleHide() {
+    private  void toScaleHide() {
         if (0 <= view.getScaleX()) {
             this.view.setScaleX((float) (view.getScaleX() - 0.001 * scaleHide));
             this.view.setScaleY((float) (view.getScaleY() - 0.001 * scaleHide));
@@ -194,12 +193,12 @@ public class HutMovie {
             this.scaleHide = 0;
     }
 
-    public  void toFollow() {
+    private  void toFollow() {
         this.viewTwo.setX(view.getX() - speed);
         this.viewTwo.setY(view.getY() - speed);
     }
 
-    public  void toJump() {
+    private   void toJump() {
         if (jump <= view.getY() && jump != 0)
             view.setY(view.getY() - speed);
         if (jumpY >= view.getY() && jump == -1)
