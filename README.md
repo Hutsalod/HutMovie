@@ -7,13 +7,15 @@
 </p>
 
 ⠀
-
+⠀
 # HUTMOVIE ✌️🚀
 
 ### Mobile games development library for android. Android Studio
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hutsalod/HutMovie?style=for-the-badge)](https://github.com/Hutsalod/HutMovie/releases/latest)
 ![GitHub](https://img.shields.io/github/license/Hutsalod/HutMovie?style=for-the-badge)
 <a href="https://ko-fi.com/hutsalod" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/Donate-buy%20me%20a%20coffee-blue.svg?style=for-the-badge" alt="Buy Me A Coffee donate button" /></a>
+
+⠀
 ## 🛠 CONNECTION
 #### Project:app
 
@@ -36,7 +38,9 @@
 	        implementation 'com.github.Hutsalod:HutMovie:0.7'
 		}
 		
-```  	
+``` 
+
+⠀
 ## 📃 DESCRIPTION OF LIBRARY FUNCTIONS
 
 Methods  | Description
@@ -62,10 +66,10 @@ isCheck();  | Pushing an object between objects
 isRoom();  | The object is not in the room
 repeat();  | Repeat the animation
 
+⠀
 ## 🎲 EXAMPLE CODE
-#### activity_main.xml
+#### activity_main.xml 🎨
   ```javascript
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -85,7 +89,7 @@ repeat();  | Repeat the animation
 </FrameLayout>
 ``` 
 
-#### MainActivity.java
+#### MainActivity.java 🛠
   ```javascript
 public class MainActivity extends AppCompatActivity {
 
@@ -111,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
 }
 ```  
 
-#### Running app
-  <img width="150" height="250" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
+#### Running app 📲
+  <img width="170" height="300" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
 
 ⠀
 ## 👏 EXAMPLE GAME
