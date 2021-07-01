@@ -17,7 +17,7 @@ class MainActivityKotlin : AppCompatActivity() {
 
         HutMovie(findViewById(R.id.Person2))
                 .down(200)
-                .move(200f, 300f)
+                .move(200, 300)
                 .repeat(true)
                 .onRun()
 
