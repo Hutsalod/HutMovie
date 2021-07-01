@@ -105,8 +105,7 @@ public class MainActivity extends AppCompatActivity {
                .repeat(true)
                .onRun();
 
-        person2.down(200)
-               .move(200,300)
+        person2.move(200,300)
                .repeat(true)
                .onRun();
 		
