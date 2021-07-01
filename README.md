@@ -10,11 +10,10 @@
 # HUTMOVIE ✌️🚀
 
 ### Mobile games development library for android. Android Studio
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hutsalod/HutMovie?style=for-the-badge)](https://github.com/Hutsalod/HutMovie/releases/latest)
+![GitHub](https://img.shields.io/github/license/Hutsalod/HutMovie?style=for-the-badge)
+<a href="https://ko-fi.com/hutsalod" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/Donate-buy%20me%20a%20coffee-blue.svg?style=for-the-badge" alt="Buy Me A Coffee donate button" /></a>
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/RocketChat/Rocket.Chat/raw/master/LICENSE) ![](https://img.shields.io/badge/version-0.7-blue) ![](https://img.shields.io/badge/lib-developer-grean) 
-
-
-⠀
 ⠀
 ## 🛠 CONNECTION
 #### Project:app
