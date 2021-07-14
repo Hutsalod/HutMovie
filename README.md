@@ -3,7 +3,7 @@
 ⠀
 
 <p align="center">
-  <img width="450"  src="https://github.com/Hutsalod/HutMovie/blob/master/fon.png">
+  <img width="400"  src="https://github.com/Hutsalod/HutMovie/blob/master/fon.png">
 </p>
 
 ⠀
