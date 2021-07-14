@@ -3,7 +3,7 @@
 ⠀
 
 <p align="center">
-  <img width="400" height="172" src="https://github.com/Hutsalod/HutMovie/blob/master/fon.png">
+  <img width="450"  src="https://github.com/Hutsalod/HutMovie/blob/master/fon.png">
 </p>
 
 ⠀
@@ -119,9 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
 ⠀
 ## 👏 EXAMPLE GAME
-<img height="400" src="https://github.com/Hutsalod/HutMovie/blob/master/skrin2png.png">  | <img height="400" src="https://github.com/Hutsalod/HutMovie/blob/master/screen-1.jpg">
-------------- | -------------
- 
+<img height="400" src="https://github.com/Hutsalod/HutMovie/blob/master/screen1.png"><img height="400" src="https://github.com/Hutsalod/HutMovie/blob/master/screen2.png">
  ⠀
 
 ## ✍️ How to build
