@@ -57,12 +57,12 @@ dowm();  | Move the object to the down
 move();  | Move edges by X and Y
 position();  | Move the object to the X and Y
 rotation();  | objecct rotation
+collision();  | Pushing an object between objects
 jump();  | High jump
 follow();  | Movement to the object
 
 Methods   |  Description
 ------------- | -------------
-isCheck();  | Pushing an object between objects
 isRoom();  | The object is not in the room
 repeat();  | Repeat the animation
 
@@ -116,6 +116,66 @@ public class MainActivity extends AppCompatActivity {
 
 #### Running app 📲
   <img width="170" height="300" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
+
+⠀
+## 🎲 EXAMPLE CODE II COLLISION
+#### activity_main.xml 🎨
+  ```javascript
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grass">
+    
+    <ImageView android:id="@+id/Person1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/sprite" />
+	
+    <ImageView android:id="@+id/Person2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        app:srcCompat="@drawable/sprite2" />
+	
+</FrameLayout>
+``` 
+
+#### MainActivity.java 🛠
+  ```javascript
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main); 
+	
+        final HutMovie person1 = new HutMovie(findViewById(R.id.Person1));
+        final HutMovie person2 = new HutMovie(findViewById(R.id.Person2));
+
+        person1.move(300,300)
+               .repeat(true)
+               .onRun();
+
+        person2.move(-300,300)
+               .collision(person1)
+               .repeat(true)
+               .onRun();
+		
+        person2.setAction(new HutMovie.Action() {
+               public void onAction(float x, float y, boolean collision) {
+                   if (collision){
+                   Toast.makeText(getApplicationContext(), "WORKING!",Toast.LENGTH_LONG).show();
+                   }
+        }})
+	
+	}
+    
+}
+```  
+
+#### Running app 📲
+  <img width="170" height="300" src="https://github.com/Hutsalod/HutMovie/blob/master/collision.gif">
 
 ⠀
 ## 👏 EXAMPLE GAME
