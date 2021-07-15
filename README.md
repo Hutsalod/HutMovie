@@ -57,7 +57,7 @@ dowm();  | Move the object to the down
 move();  | Move edges by X and Y
 position();  | Move the object to the X and Y
 rotation();  | objecct rotation
-collision();  | Pushing an object between objects
+collision();  | Collision of an object with an object
 jump();  | High jump
 follow();  | Movement to the object
 
@@ -150,17 +150,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
 	
-        final HutMovie person1 = new HutMovie(findViewById(R.id.Person1));
-        final HutMovie person2 = new HutMovie(findViewById(R.id.Person2));
+        HutMovie person1 = new HutMovie(findViewById(R.id.Person1));
+        HutMovie person2 = new HutMovie(findViewById(R.id.Person2));
 
-        person1.move(300,300)
-               .repeat(true)
-               .onRun();
+        person1.move(400,400).onRun();
 
-        person2.move(-300,300)
-               .collision(person1)
-               .repeat(true)
-               .onRun();
+        person2.move(-400,400).collision(person1).onRun();
 		
         person2.setAction(new HutMovie.Collision() {
                @Override
