@@ -162,11 +162,9 @@ public class MainActivity extends AppCompatActivity {
                .repeat(true)
                .onRun();
 		
-        person2.setAction(new HutMovie.Action() {
-               public void onAction(float x, float y, boolean collision) {
-                   if (collision){
-                   Toast.makeText(getApplicationContext(), "WORKING!",Toast.LENGTH_LONG).show();
-                   }
+        person2.setAction(new HutMovie.ActionCollision() {
+               public void onActionCollision() {
+               Toast.makeText(getApplicationContext(), "WORKING!",Toast.LENGTH_LONG).show();
         }})
 	
 	}
