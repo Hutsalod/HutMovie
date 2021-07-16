@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         HutMovie person2 = new HutMovie(findViewById(R.id.Person2));
 
         person1.right(200)
+               .down(200)
                .repeat(true)
                .onRun();
 
