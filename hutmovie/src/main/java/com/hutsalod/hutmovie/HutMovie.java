@@ -1,16 +1,8 @@
 package com.hutsalod.hutmovie;
 
-
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
 
 //
 //  HutMovie
@@ -26,7 +18,7 @@ public class HutMovie {
 
     private float speed = 1; //Default 1
 
-    private int up, down, left, right, rotation, jump, jumpY, moveX, moveY, scaleShow, scaleHide;
+    private int up, down, left, right, rotation, jump, jumpY, moveX, moveY, scaleShow, scaleHide, follow;
 
     public HutMovie(final View view){
         this.view = view;
@@ -75,7 +67,6 @@ public class HutMovie {
 
     public  HutMovie right(final int x) {
         this.right = (int) (view.getX()+x);
-
         return this;
     }
 
@@ -106,6 +97,7 @@ public class HutMovie {
     }
 
     public  HutMovie follow(final View v) {
+        this.follow = 1;
         this.viewTwo = v;
         return this;
     }
@@ -115,21 +107,37 @@ public class HutMovie {
         return this;
     }
 
-    public  Boolean isCheck(final View view) {
-        return setCheck(this.view, view, 0);
+    public  HutMovie collision(final HutMovie view) {
+        this.viewTwo = view.view;
+        return this;
     }
+
 
 
     /**
      * CORE DESCRIPTION OF LIBRARY FUNCTIONS
      */
 
+
+    private  Boolean isCheck(final View view) {
+        return setCheck(this.view, view, 0);
+    }
+
+    private  void toCollision() {
+        if (setCheck(this.view, viewTwo, 0)) {
+            collision = true;
+            mCollisionListener.onActionCollision();
+        }else {
+            collision = false;
+        }
+    }
+
     private boolean setCheck(final View view, final View view2, int size) {
         size = size == 0 ? 0 : size;
-        if ((view.getX()+view.getWidth()-size) >= view2.getX() &&
-                view.getX() <= (view2.getX()+view2.getWidth()-size) &&
-                view.getY() <= (view2.getY()+view2.getHeight()-size) &&
-                view.getY() >= (view2.getY()-view2.getHeight()+size) ) {
+        if ((view.getX()+view.getWidth()) >= view2.getX() &&
+                view.getX() <= (view2.getX()+view2.getWidth()) &&
+                view.getY() <= (view2.getY()+view2.getHeight()) &&
+                view.getY() >= (view2.getY()-view2.getHeight()) ) {
             collision = true;
             return true;
         }
@@ -137,9 +145,9 @@ public class HutMovie {
     }
 
     private  void toMove() {
-        if (moveX >= view.getX() || repeat == true)
+        if ((moveX >= view.getX() || moveX <= view.getX())  || repeat == true)
             this.view.setX(moveX <= 0 ?  view.getX()-speed :  view.getX()+speed);
-        if (moveY >= view.getY() || repeat == true)
+        if ((moveY >= view.getY() || moveY <= view.getY()) || repeat == true)
             this.view.setY(moveY <= 0 ?  view.getY()-speed :  view.getY()+speed);
 
         if (moveX <= view.getX() && moveY <= view.getY() && repeat == false) {
@@ -225,7 +233,7 @@ public class HutMovie {
     }
 
     private int isStop() {
-        return right | left | down | up | rotation | jump | scaleShow | scaleHide | moveX | moveY | scaleShow | scaleHide;
+        return right | left | down | up | rotation | jump | scaleShow | scaleHide | moveX | moveY | scaleShow | scaleHide | follow;
     }
 
     private void update() {
@@ -238,7 +246,8 @@ public class HutMovie {
         if(scaleShow != 0) toScaleShow();
         if(scaleHide != 0) toScaleHide();
         if(moveX != 0 || moveY != 0) toMove();
-        if(viewTwo != null) toFollow();
+        if(follow != 0) toFollow();
+        if(viewTwo != null) toCollision();
 
         mListener.onAction(view.getX(),view.getY(), collision);
     }
@@ -252,10 +261,11 @@ public class HutMovie {
             @Override public void run() {
 
                 update();
-                handler.post(this);
 
-                if (isStop() == 0)
-                handler.removeCallbacks(this);
+                if (isStop() != 0)
+                    handler.post(this);
+                else
+                    handler.removeCallbacks(this);
 
             }});
         return HutMovie.this;
@@ -264,20 +274,32 @@ public class HutMovie {
     private Action mListener = new HutMovie.Action() {
         @Override
         public void onAction(float x, float y, boolean collision) {
-
         }
     };
 
-    public interface Action{
-        void onAction(float x, float y, boolean collision);
-    }
+    private Collision mCollisionListener = new HutMovie.Collision() {
+        @Override
+        public void onActionCollision() {
+        }
+    };
 
     public HutMovie setAction(Action listener){
         mListener = listener;
         return  this;
     }
 
+    public HutMovie setAction(Collision listener){
+        mCollisionListener = listener;
+        return  this;
+    }
 
+    public interface Action{
+        void onAction(float x, float y, boolean collision);
+    }
+
+    public interface Collision{
+        void onActionCollision();
+    }
 
 }
 

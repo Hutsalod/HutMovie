@@ -13,6 +13,7 @@
     <ImageView android:id="@+id/Person2"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_gravity="right"
         app:srcCompat="@drawable/sprite2" />
 
 
