@@ -3,7 +3,7 @@
 ⠀
 
 <p align="center">
-  <img width="400" height="172" src="https://github.com/Hutsalod/HutMovie/blob/master/fon.png">
+  <img width="400"  src="https://github.com/Hutsalod/HutMovie/blob/master/fon.png">
 </p>
 
 ⠀
@@ -35,7 +35,7 @@
   ```javascript
   	
   	dependencies {
-	        implementation 'com.github.Hutsalod:HutMovie:0.7'
+	        implementation 'com.github.Hutsalod:HutMovie:0.8'
 		}
 		
 ``` 
@@ -57,12 +57,12 @@ dowm();  | Move the object to the down
 move();  | Move edges by X and Y
 position();  | Move the object to the X and Y
 rotation();  | objecct rotation
+collision();  | Collision of an object with an object
 jump();  | High jump
 follow();  | Movement to the object
 
 Methods   |  Description
 ------------- | -------------
-isCheck();  | Pushing an object between objects
 isRoom();  | The object is not in the room
 repeat();  | Repeat the animation
 
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         HutMovie person2 = new HutMovie(findViewById(R.id.Person2));
 
         person1.right(200)
+               .down(200)
                .repeat(true)
                .onRun();
 
@@ -118,10 +119,62 @@ public class MainActivity extends AppCompatActivity {
   <img width="170" height="300" src="https://github.com/Hutsalod/HutMovie/blob/master/ezgif.com-video-to-gif-2.gif">
 
 ⠀
+## 🎲 EXAMPLE CODE II COLLISION
+#### activity_main.xml 🎨
+  ```javascript
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grass">
+    
+    <ImageView android:id="@+id/Person1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/sprite" />
+	
+    <ImageView android:id="@+id/Person2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        app:srcCompat="@drawable/sprite2" />
+	
+</FrameLayout>
+``` 
+
+#### MainActivity.java 🛠
+  ```javascript
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main); 
+	
+        HutMovie person1 = new HutMovie(findViewById(R.id.Person1));
+        HutMovie person2 = new HutMovie(findViewById(R.id.Person2));
+
+        person1.move(400,400).onRun();
+
+        person2.move(-400,400).collision(person1).onRun();
+		
+        person2.setAction(new HutMovie.Collision() {
+               @Override
+               public void onActionCollision() {
+               Toast.makeText(getApplicationContext(), "WORKING!",Toast.LENGTH_LONG).show();}
+        })
+	
+	}
+    
+}
+```  
+
+#### Running app 📲
+  <img width="170" height="300" src="https://github.com/Hutsalod/HutMovie/blob/master/collision.gif">
+
+⠀
 ## 👏 EXAMPLE GAME
-<img height="400" src="https://github.com/Hutsalod/HutMovie/blob/master/skrin2png.png">  | <img height="400" src="https://github.com/Hutsalod/HutMovie/blob/master/screen-1.jpg">
-------------- | -------------
- 
+<img height="400" src="https://github.com/Hutsalod/HutMovie/blob/master/screen1.png"><img height="400" src="https://github.com/Hutsalod/HutMovie/blob/master/screen2.png">
  ⠀
 
 ## ✍️ How to build
