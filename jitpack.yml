@@ -1,4 +1,2 @@
 jdk:
-  - openjdk17
-install:
-  - ./gradlew :library:publishReleasePublicationToMavenLocal
+- openjdk11
