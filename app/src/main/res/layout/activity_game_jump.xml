@@ -7,13 +7,13 @@
     android:background="#FBFFFF">
 
     <ImageView
-        android:id="@+id/Enemy"
+        android:id="@+id/enemy"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="center_vertical|right"
         app:srcCompat="@drawable/sprite2" />
 
-    <ImageView android:id="@+id/Person1"
+    <ImageView android:id="@+id/person"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="36dp"
@@ -28,7 +28,7 @@
         android:layout_marginTop="18dp"
         android:background="#bbbbbb"/>
 
-    <Button android:id="@+id/Jump"
+    <Button android:id="@+id/jump_action"
         android:layout_width="120dp"
         android:layout_height="80dp"
         android:layout_gravity="center"

@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/grass">
 
-    <ImageView android:id="@+id/Person1"
+    <ImageView
+        android:id="@+id/person1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/sprite" />
 
-    <ImageView android:id="@+id/Person2"
+    <ImageView
+        android:id="@+id/person2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="right"
