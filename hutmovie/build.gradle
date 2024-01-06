@@ -41,12 +41,3 @@ publishing {
         mavenLocal()
     }
 }
-android.libraryVariants.each{variant->
-    publishing.publications.create(variant.name, MavenPublication){
-        from components.findByName(variant.name)
-
-        groupId = 'com.github.Hutsalod'
-        artifactId = "HutMovie"
-        version = '1.2'
-    } //
-}
