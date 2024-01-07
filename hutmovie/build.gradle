@@ -37,5 +37,5 @@ android.libraryVariants.each{variant->
         groupId = 'com.github.Hutsalod'
         artifactId = "HutMovie"
         version = '1.2'
-    } //
+    }
 }
