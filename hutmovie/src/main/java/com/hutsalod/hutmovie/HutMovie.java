@@ -18,9 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HutMovie {
+
     public HutMovie(final View view){
         this.view = view;
     }
+
     private List<AnimatedActions> hutViews = new ArrayList<>();
 
     public View view, viewTwo;
@@ -31,10 +33,12 @@ public class HutMovie {
         this.speed = speed;
         return this;
     }
+
     public  HutMovie repeat(boolean repeat) {
         this.repeat = repeat;
         return this;
     }
+
     public HutMovie position(float x, float y) {
         this.view.setX(x);
         this.view.setY(y);
