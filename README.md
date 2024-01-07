@@ -35,7 +35,7 @@
   ```javascript
   	
   	dependencies {
-	        implementation 'com.github.Hutsalod:HutMovie:1.2'
+	        implementation 'com.github.Hutsalod:HutMovie:1.2.1'
 		}
 		
 ``` 
