@@ -2,6 +2,7 @@ package com.hutsalod.game
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.hutsalod.hutmovie.HutMovie
 
 class GameExampleKotlin : AppCompatActivity() {
 
@@ -18,8 +19,6 @@ class GameExampleKotlin : AppCompatActivity() {
                 .onRun()
 
         person2.move(-300, 300)
-//                .collision(person1)
-//                .setAction(HutMovie.Action { x, y, collision -> if (collision) Toast.makeText(applicationContext, "WORKING!", Toast.LENGTH_LONG).show() })
                 .repeat(true)
                 .onRun()
 
